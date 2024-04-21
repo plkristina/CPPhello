@@ -45,13 +45,13 @@ pipeline{
                 sh """./${params.FILE_NAME}"""
             }
         }
-        stage('Sending an artifact to pletyuk'){
+        stage('Sending an artifact to kris'){
             steps{
 			    // Настройки плагина Publish Over SSH
                 sshPublisher(
                              publishers: [
                                  sshPublisherDesc(
-                                     configName: "pletyuk",
+                                     configName: "kris",
                                      transfers: [
                                         sshTransfer(sourceFiles: "${params.FILE_NAME}")
                                      ]
